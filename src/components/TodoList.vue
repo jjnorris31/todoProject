@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" class="todo-input" placeholder="¿Qué es lo próximo que harás?" v-model="newTodo" @keyup.enter="addTodo">
+    <input type="text" class="todo-input" placeholder="¿Qué es lo siguiente que harás?" v-model="newTodo" @keyup.enter="addTodo">
     <div v-if="$store.state.loading" class="lds-ripple">
       <div></div><div></div><div></div><div></div>
     </div>

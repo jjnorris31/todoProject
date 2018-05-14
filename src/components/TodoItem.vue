@@ -1,13 +1,13 @@
 <template>
   <div class="todo-item">
     <div class="todo-item-left">
-      <img class="gif" v-if="gif"  :src="gif.fixed_width_small_url"  height="60" width="60">
-      <VueUploadcare :url.sync="photoUrl"></VueUploadcare>
+      <img class="gif" v-if="gif" :src="gif.fixed_width_small_url"  height="60" width="60">
       <input type="checkbox" v-model="completed" @change="doneEdit">
       <div v-if="!editing" @dblclick="editTodo" class="todo-item-label" :class="{ completed : completed }">{{ title }}</div>
       <input v-else class="todo-item-edit" type="text" v-model="title" @blur="doneEdit" @keyup.enter="doneEdit" @keyup.esc="cancelEdit" v-focus>
     </div> <!-- end todo-item-left -->
     <div>
+      <VueUploadcare :url.sync="photoUrl"></VueUploadcare>
       <span class="remove-item" @click="removeTodo(todo.id)">
         &times;
       </span>
